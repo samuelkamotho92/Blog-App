@@ -12,7 +12,7 @@ just run npm install upon downloading the package.json
 ## `technology used`
 
 1-React js for frontend
-2-Firebase for firestore and authentication
+3-JSON server-used to store our data and we can fecth it inside the useEffect hook in our file
 
 
 
