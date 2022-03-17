@@ -1,14 +1,23 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+import {useState} from 'react'
 import React from "react";
-
-import "./App.css";
-
-
+import Navbar from "./Navbar" 
+import Home  from "./Home"
 const App = () => {
+
+const changeValue = ()=>{
+  setValue(currentValue + 1)
+}
   return (
-   <h1>Blog Page</h1>
+<div className="blogApp">
+<Navbar />
+<div className="content">
+<Home />
+</div>
+</div>
+
   );
 };
 
