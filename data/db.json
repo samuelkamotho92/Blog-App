@@ -1,0 +1,25 @@
+{
+  "blogs": [
+    {
+      "title": "Greenfarm Dev",
+      "body": "Greenfarm developers",
+      "owner": "James Maingi",
+      "type": "Dynamic Application",
+      "id": 1
+    },
+    {
+      "title": "Kyusda Website",
+      "body": "Kirinyaga University Website",
+      "owner": "Kyusda",
+      "type": "Static Application",
+      "id": 3
+    },
+    {
+      "title": "Wajee Nature Park",
+      "body": "Wajee nature park",
+      "owner": "wajee",
+      "type": "Dynamic Application",
+      "id": 2
+    }
+  ]
+}
