@@ -5,19 +5,24 @@ import {useState} from 'react'
 import React from "react";
 import Navbar from "./Navbar" 
 import Home  from "./Home"
-const App = () => {
 
-const changeValue = ()=>{
-  setValue(currentValue + 1)
-}
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import CreateProj from './createProj';
+
+const App = () => {
   return (
+    <Router>
 <div className="blogApp">
 <Navbar />
 <div className="content">
-<Home />
+  <Routes >
+  <Route path="/" element={<Home/>} />
+  <Route path="/createProj" element={<CreateProj/>} />
+  {/* <Route path='/About me' element={<About/>} /> */}
+  </Routes>
 </div>
 </div>
-
+    </Router>
   );
 };
 
