@@ -12,7 +12,9 @@ just run npm install upon downloading the package.json
 ## `technology used`
 
 1-React js for frontend
-3-JSON server-used to store our data and we can fecth it inside the useEffect hook in our file
+2-JSON server-used to store our data and we can fecth it inside the useEffect hook in our file
+3- To open the server connection run the following command
+  json-server --watch data/db.json --port 8000
 
 
 
