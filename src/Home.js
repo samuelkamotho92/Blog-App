@@ -9,7 +9,7 @@ import useFecth from "./useFetch.js"
 
 const Home = () => {
     const title = 'SamkamDev';
-   const {data:blogs,error,ispending} = useFecth();
+   const {data:blogs,error,ispending} = useFecth("http://localhost:8000/blogs");
     return ( 
         <div className="homepage">
             <h1 style={{textAlign:"center"}}> Welcome to <span style={{color:" #f1356d"}}>{title}</span>  Projects Page</h1>

@@ -8,6 +8,7 @@ import Home  from "./Home"
 
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import CreateProj from './createProj';
+import ProjDetails from './projDetails';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
   <Routes >
   <Route path="/" element={<Home/>} />
   <Route path="/createProj" element={<CreateProj/>} />
-  {/* <Route path='/About me' element={<About/>} /> */}
+  <Route path='/project/:id' element={<ProjDetails/>} />
   </Routes>
 </div>
 </div>

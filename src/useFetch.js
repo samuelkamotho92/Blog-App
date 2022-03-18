@@ -4,13 +4,13 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 
-const useFetch = ()=>{
+const useFetch = (url)=>{
     const [data,setdata] = useState(null);
     const [ispending,setpending] = useState(true);
     const [error,setError] = useState(false);
 //fecth function
 
-const fetchBlogs =  async(url,signal)=>{
+const fetchBlogs =  async()=>{
    try{
        const resp = await fetch(url);
        if(!resp.ok){
@@ -37,8 +37,7 @@ console.log("Aborted Succesffuly")
 useEffect(()=>{
     const controller = new AbortController();
    // fetch data 
-    const dburl = "http://localhost:8000/blogs"
-    fetchBlogs(dburl,controller.signal)
+    fetchBlogs()
     //cleanup of the useEffect
 return ()=>{
     controller.abort();
