@@ -1,16 +1,36 @@
 /* eslint-disable no-unused-expressions */
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const CreateProj = () => {
     const [title,settitle] = useState("");
     const [client,setClient] = useState("");
     const [type,settype] = useState("MERN stack");
     const [body,setbody] = useState("Enter Project description");
+    const [pending,setpending] = useState(false);
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const proj = { title, client, type , body };
+        setpending(true)
+     fetch("http://localhost:8000/blogs",{
+         method:"POST",
+         headers: {
+            'Content-Type': 'application/json'
+          },
+          body:JSON.stringify(proj)
+     }).then(()=>{
+         console.log("added")
+         setpending(false)
+        navigate("/")
+     })
+      }
+
 
     return (  
         <div className="createProj">
             <h2 style={{textAlign:"center",color:"pink"} }>
  Enter Details About Your new Proj</h2>
-       <form>
+       <form onSubmit={handleSubmit}>
 <label>Project Title</label>
 <input type="text" 
 required
@@ -41,7 +61,9 @@ onChange={(e)=>{
 value={body}
 onChange={(e)=>setbody(e.target.value)}
 ></textarea>
-<button type="submit">SUBMIT</button>
+{!pending &&<button>SUBMIT</button>}
+{pending &&<button>Adding new proj...</button>}
+
        </form>
        
         </div>
